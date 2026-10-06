@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тур агентство - Главная</title>
+    <!-- Подключение шрифтов и иконок -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #eb407a;
+            --primary-hover: #d12d63;
+            --bg-light: #fdf2f7;
+            --text-dark: #1f1f1f;
+            --text-gray: #666666;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Шапка --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo i {
+            transform: rotate(-45deg);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-login {
+            padding: 10px 25px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 8px;
+            background: transparent;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: var(--bg-light);
+        }
+
+        .btn-find {
+            padding: 10px 25px;
+            background: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-find:hover {
+            background: var(--primary-hover);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--bg-light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .search-input-wrapper {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            padding: 0 15px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .search-input-wrapper i {
+            color: #ccc;
+            margin-right: 10px;
+        }
+
+        .search-input-wrapper input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .search-date-wrapper {
+            padding: 0 15px;
+            color: var(--primary-color);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .btn-search {
+            background: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- Секции с карточками --- */
+        .section-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            position: relative;
+            height: 200px;
+            background-color: #eee;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .card-rating i {
+            color: var(--primary-color);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .card-price {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .btn-card {
+            background: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* --- Преимущества --- */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .advantage-item i {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .advantage-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .advantage-item p {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* --- Подвал --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-nav a {
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        .footer-nav a:hover {
+            color: #ffffff;
+        }
+
+        .footer-contacts {
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-contacts strong {
+            font-size: 16px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a {
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .footer-copyright {
+            color: #888888;
+            font-size: 14px;
+        }
+
+        /* Адаптив */
+        @media (max-width: 900px) {
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-plane"></i> Тур агентство
+        </div>
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Экскурсии</a>
+            <a href="#">Маршруты</a>
+            <a href="#">О нас</a>
+        </nav>
+        <div class="header-buttons">
+            <button class="btn-login">Войти</button>
+            <button class="btn-find">Найти поездку</button>
+        </div>
+    </header>
+
+    <!-- Главный баннер (Hero) -->
+    <section class="hero">
+        <h1>Найди свой маршрут по России</h1>
+        <p>Готовые маршруты, авторские экскурсии и бронирование в одном месте</p>
+        
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Куда">
+            </div>
+            <div class="search-date-wrapper">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+            <button class="btn-search">Найти</button>
+        </div>
+    </section>
+
+    <!-- Популярные направления -->
+    <section class="section-container">
+        <h2 class="section-title">Популярные направления</h2>
+        <div class="cards-grid">
+            
+            <!-- Карточка 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1548261554-75055a1e3b91?auto=format&fit=crop&w=500&q=80" alt="Карелия">
+                    <span class="badge">Семейный</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">Карелия · 5 дней</div>
+                    <div class="card-title">Семейный маршрут по Южной Карелии</div>
+                    <div class="card-rating">
+                        <i class="fas fa-star"></i> 4.8 · 126 отзывов
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">от 24 900 ₽</div>
+                        <button class="btn-card">Смотреть</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1556610961-2fecc5927171?auto=format&fit=crop&w=500&q=80" alt="Санкт-Петербург">
+                    <span class="badge">Авторская</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">Санкт-Петербург · 2,5 часа</div>
+                    <div class="card-title">Авторская экскурсия по Петроградской стороне</div>
+                    <div class="card-rating">
+                        <i class="fas fa-star"></i> 4.9 · 84 отзыва
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">2 500 ₽ / чел</div>
+                        <button class="btn-card">Смотреть</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=500&q=80" alt="Валаам">
+                    <span class="badge">Активный</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">Карелия · 4 дня</div>
+                    <div class="card-title">Активный отдых на Валааме</div>
+                    <div class="card-rating">
+                        <i class="fas fa-star"></i> 4.7 · 56 отзывов
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">от 18 500 ₽</div>
+                        <button class="btn-card">Смотреть</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="section-container">
+        <h2 class="section-title">Преимущества</h2>
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>Всё в одном месте</h4>
+                <p>Маршруты, жильё, экскурсии и билеты — без прыжков по сайтам</p>
+            </div>
+            <div class="advantage-item">
+                <i class="fas fa-user-check"></i>
+                <h4>Проверенные гиды</h4>
+                <p>Только авторы с реальными отзывами и рейтингом от путешественников</p>
+            </div>
+            <div class="advantage-item">
+                <i class="fas fa-comments"></i>
+                <h4>Реальные отзывы</h4>
+                <p>Честные оценки и фото от тех, кто уже съездил</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-nav">
+            <a href="#">Главная</a>
+            <a href="#">Экскурсии</a>
+            <a href="#">Маршруты</a>
+            <a href="#">О нас</a>
+        </div>
+        
+        <div class="footer-contacts">
+            <strong>+79078909070</strong><br>
+            г.Сыктывкар, Первомайская 1
+        </div>
+
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-vk"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="footer-copyright">
+            © 2026 Тур агентство
+        </div>
+    </footer>
+
+</body>
+</html>
