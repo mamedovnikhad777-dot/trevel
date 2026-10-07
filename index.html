@@ -11,7 +11,7 @@
     <header class="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="./imgs/Лого 2.svg" alt="Логотип" style="height: 30px;">
+                <img src="./imgs/Лого 2.svg" alt="Логотип" class="logo-img">
             </a>
             <nav class="nav">
                 <a href="index.html">Главная</a>
@@ -32,8 +32,12 @@
                 <h1>Найди свой маршрут по России</h1>
                 <p>Готовые маршруты, авторские экскурсии и бронирование в одном месте</p>
                 <div class="search-bar">
-                    <input type="text" placeholder="Куда">
-                    <a href="routes.html" class="btn btn-primary">Найти</a>
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Куда">
+                        <img src="./imgs/Calendar.svg" alt="Календарь" class="calendar-icon">
+                    </div>
+                    <a href="routes.html" class="btn btn-primary btn-large">Найти</a>
                 </div>
             </div>
         </section>
@@ -42,7 +46,10 @@
             <h2 class="section-title">Популярные направления</h2>
             <div class="grid-3">
                 <div class="card">
-                    <img src="./imgs/image 1.svg" alt="Карелия" class="card-img">
+                    <div class="card-img-wrapper">
+                        <img src="./imgs/image 1.svg" alt="Карелия" class="card-img">
+                        <span class="card-tag">Семейный</span>
+                    </div>
                     <div class="card-body">
                         <div class="card-meta">Карелия • 5 дней</div>
                         <h3 class="card-title">Семейный маршрут по Южной Карелии</h3>
@@ -54,7 +61,10 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="./imgs/image 1(1).svg" alt="Санкт-Петербург" class="card-img">
+                    <div class="card-img-wrapper">
+                        <img src="./imgs/image 1(1).svg" alt="Санкт-Петербург" class="card-img">
+                        <span class="card-tag">Авторская</span>
+                    </div>
                     <div class="card-body">
                         <div class="card-meta">Санкт-Петербург • 2,5 часа</div>
                         <h3 class="card-title">Авторская экскурсия по Петроградской стороне</h3>
@@ -66,7 +76,10 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="./imgs/image 1(2).svg" alt="Валаам" class="card-img">
+                    <div class="card-img-wrapper">
+                        <img src="./imgs/image 1(2).svg" alt="Валаам" class="card-img">
+                        <span class="card-tag">Активный</span>
+                    </div>
                     <div class="card-body">
                         <div class="card-meta">Карелия • 4 дня</div>
                         <h3 class="card-title">Активный отдых на Валааме</h3>
@@ -81,20 +94,98 @@
         </section>
 
         <section class="section container">
+            <h2 class="section-title">Готовые маршруты</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./imgs/image 1(1).svg" alt="Санкт-Петербург" class="card-img">
+                        <span class="card-tag">Авторская</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">Санкт-Петербург • 2,5 часа</div>
+                        <h3 class="card-title">Дворы и парадные Петроградской стороны</h3>
+                        <div class="card-rating"><span>★</span> 4.9 • 84 отзыва</div>
+                        <div class="card-footer">
+                            <span class="card-price">2 500 ₽ / чел</span>
+                            <a href="route-details.html" class="btn btn-primary btn-small">Смотреть</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./imgs/image 1(2).svg" alt="Валаам" class="card-img">
+                        <span class="card-tag">Активный</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">Карелия • 4 дня</div>
+                        <h3 class="card-title">Активный отдых на Валааме</h3>
+                        <div class="card-rating"><span>★</span> 4.7 • 56 отзывов</div>
+                        <div class="card-footer">
+                            <span class="card-price">от 18 500 ₽</span>
+                            <a href="route-details.html" class="btn btn-primary btn-small">Смотреть</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./imgs/image 1.svg" alt="Карелия" class="card-img">
+                        <span class="card-tag">Семейный</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">Карелия • 5 дней</div>
+                        <h3 class="card-title">Семейный маршрут по Южной Карелии</h3>
+                        <div class="card-rating"><span>★</span> 4.8 • 126 отзывов</div>
+                        <div class="card-footer">
+                            <span class="card-price">от 24 900 ₽</span>
+                            <a href="route-details.html" class="btn btn-primary btn-small">Смотреть</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <h2 class="section-title">Авторские экскурсии</h2>
+            <div class="grid-3">
+                <a href="routes.html" class="overlay-card">
+                    <img src="./imgs/image 1.svg" alt="Карелия">
+                    <div class="overlay-text">
+                        <h3>Карелия</h3>
+                        <p>18 маршрутов</p>
+                    </div>
+                </a>
+                <a href="routes.html" class="overlay-card">
+                    <img src="./imgs/image 1(1).svg" alt="Абхазия">
+                    <div class="overlay-text">
+                        <h3>Абхазия</h3>
+                        <p>8 маршрутов</p>
+                    </div>
+                </a>
+                <a href="routes.html" class="overlay-card">
+                    <img src="./imgs/image 1(2).svg" alt="Санкт-Петербург">
+                    <div class="overlay-text">
+                        <h3>Санкт-Петербург</h3>
+                        <p>52 маршрута</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section container">
             <h2 class="section-title">Преимущества</h2>
             <div class="features">
                 <div>
-                    <img src="./imgs/wdB8N 1.svg" alt="Карта" style="height: 40px; margin-bottom: 15px;">
+                    <img src="./imgs/wdB8N 1.svg" alt="Карта" style="height: 50px; margin-bottom: 15px;">
                     <h3>Всё в одном месте</h3>
                     <p style="color: #7a7a7a; margin-top: 10px;">Маршруты, жильё, экскурсии и билеты — без прыжков по сайтам</p>
                 </div>
                 <div>
-                    <img src="./imgs/WhKAP 1.svg" alt="Гид" style="height: 40px; margin-bottom: 15px;">
+                    <img src="./imgs/WhKAP 1.svg" alt="Гид" style="height: 50px; margin-bottom: 15px;">
                     <h3>Проверенные гиды</h3>
                     <p style="color: #7a7a7a; margin-top: 10px;">Только авторы с реальными отзывами и рейтингом от путешественников</p>
                 </div>
                 <div>
-                    <img src="./imgs/KbwGD 1.svg" alt="Звезда" style="height: 40px; margin-bottom: 15px;">
+                    <img src="./imgs/KbwGD 1.svg" alt="Звезда" style="height: 50px; margin-bottom: 15px;">
                     <h3>Реальные отзывы</h3>
                     <p style="color: #7a7a7a; margin-top: 10px;">Честные оценки и фото от тех, кто уже съездил</p>
                 </div>
@@ -113,14 +204,19 @@
                 </nav>
                 <div class="footer-info">
                     <strong>+79078909070</strong>
-                    г.Сыктывкар, Первомайская 1
+                    <span>г.Сыктывкар, Первомайская 1</span>
                 </div>
-                <div class="footer-social">
-                    <img src="yt.png" alt="YouTube" style="height: 24px;">
+                <div class="footer-contacts">
+                    <div class="footer-social">
+                        <a href="https://vk.com" target="_blank" rel="noopener"><img src="./imgs/vk.svg" alt="VK"></a>
+                        <a href="https://t.me" target="_blank" rel="noopener"><img src="./imgs/Telegram App.svg" alt="Telegram"></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener"><img src="./imgs/YouTube.svg" alt="YouTube"></a>
+                        <a href="https://wa.me" target="_blank" rel="noopener"><img src="./imgs/whatsapp.svg" alt="WhatsApp"></a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2026 Тур агентство
+                    </div>
                 </div>
-            </div>
-            <div class="footer-copyright">
-                © 2026 Тур агентство
             </div>
         </div>
     </footer>
