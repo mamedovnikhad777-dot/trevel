@@ -1,11 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Вход</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="./imgs/Лого 2.svg" alt="Логотип" class="logo-img">
+            </a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="not-ready.html">Экскурсии</a>
+                <a href="routes.html">Маршруты</a>
+                <a href="contacts.html">О нас</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Войти</a>
+                <a href="routes.html" class="btn btn-primary">Найти поездку</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumbs">
+            <a href="index.html">Главная</a> / Вход
+        </div>
+
+        <div class="form-container">
+            <h1 class="form-title">Вход</h1>
+            <form action="index.html" method="GET">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Логин" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Пароль" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large" style="width: 100%;" disabled>Отправить</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <nav class="footer-nav">
+                    <a href="index.html">Главная</a>
+                    <a href="not-ready.html">Экскурсии</a>
+                    <a href="routes.html">Маршруты</a>
+                    <a href="contacts.html">О нас</a>
+                </nav>
+                <div class="footer-info">
+                    <strong>+79078909070</strong>
+                    <span>г.Сыктывкар, Первомайская 1</span>
+                </div>
+                <div class="footer-contacts">
+                    <div class="footer-social">
+                        <a href="https://vk.com" target="_blank" rel="noopener"><img src="./imgs/vk.svg" alt="VK"></a>
+                        <a href="https://t.me" target="_blank" rel="noopener"><img src="./imgs/Telegram App.svg" alt="Telegram"></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener"><img src="./imgs/YouTube.svg" alt="YouTube"></a>
+                        <a href="https://wa.me" target="_blank" rel="noopener"><img src="./imgs/whatsapp.svg" alt="WhatsApp"></a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2026 Тур агентство
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
